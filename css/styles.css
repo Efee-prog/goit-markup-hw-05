@@ -614,7 +614,7 @@ address {
   outline: transparent;
 }
 
-.footer-input:focus{
+.footer-input:focus {
   border-color: var(--color-success);
 }
 
@@ -681,19 +681,19 @@ address {
 .modal {
   position: relative;
   width: 408px;
-  height: 584px;
+  min-height: 584px;
   padding: 72px 24px 24px 24px;
 
   background-color: var(--color-modal-bg);
   border-radius: 4px;
 
   box-shadow:
-  0px 1px 1px rgba(0, 0, 0, 0.14),
-  0px 1px 3px rgba(0, 0, 0, 0.12),
-  0px 2px 1px rgba(0, 0, 0, 0.2);
+    0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
-.modal-div{
+.modal-div {
   margin-bottom: 8px;
 }
 
@@ -732,7 +732,7 @@ address {
   position: relative;
 }
 
-.modal-form-label{
+.modal-form-label {
   margin-bottom: 4px;
 }
 
@@ -783,18 +783,18 @@ address {
   resize: none;
 
   outline: transparent;
-   font-size: 12px;
+  font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
 
-   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-textarea::placeholder {
   color: var(--color-overlay);
 }
 
-.modal-close-btn:hover{
+.modal-close-btn:hover {
   background-color: var(--color-primary-pressed);
 }
 
@@ -809,7 +809,13 @@ address {
   fill: var(--color-white);
 }
 
-.visually-hidden{
+.visually-hidden {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.checkbox-span {
   width: 16px;
   height: 16px;
 
@@ -822,9 +828,18 @@ address {
 
   margin-right: 8px;
 
+  fill: transparent;
+
   transition:
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.visually-hidden:checked + .checkbox-label .checkbox-span {
+  background-color: var(--color-primary-pressed);
+  border: none;
+  fill: var(--color-light);
 }
 
 .checkbox-label {
@@ -835,10 +850,11 @@ address {
   color: var(--color-subtle-text);
 }
 
-.modal-checkbox-div{
+.modal-checkbox-div {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 24px;
 }
 
 .modal-send-btn {
@@ -847,7 +863,7 @@ address {
   min-width: 169px;
   height: 56px;
 
-  margin: 0 auto;
+  margin: 16px auto 0;
 
   border: none;
   border-radius: 4px;
